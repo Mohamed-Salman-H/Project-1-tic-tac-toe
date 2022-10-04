@@ -17,11 +17,9 @@ function play(event) {
 
     if (playerOneTurn == true){
         fill.innerHTML = 'X'
-        // fill.innerHTML.color = 'blue'
-        // element.classList.add("mystyle");
-        // playerOneTurn.style.color = "blue"
+        fill.style.color = 'rgb(0, 187, 255)'
         playerOneTurn = false
-        // update board variable with index
+
     } else {
         fill.innerHTML = 'O'
         playerOneTurn = true
