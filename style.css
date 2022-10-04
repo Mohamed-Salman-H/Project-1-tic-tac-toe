@@ -1,15 +1,15 @@
 .mainGame {
     /* width: 255px; */
-    width: 80vw;
-    height: 80vh;
+    width: 45vw;
+    height: 60vh;
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
-    color:crimson;
+    color: rgb(255, 68, 0);
     margin: auto;
 }
 
 .title {
-    background: paleturquoise;
+    background: rgba(175, 238, 238, 0.146);
     width: 92%;
     height: 10vh;
     padding: 5px 0px;
@@ -18,7 +18,7 @@
 
 }
 span {
-    color:blue
+    color:rgb(0, 187, 255)
 }
 
 .block {
@@ -26,12 +26,28 @@ span {
     /* height: 80px; */
     width: 30%;
     height: 30%;
-    background: paleturquoise;
+    background: rgba(175, 221, 238, 0.146);
     float:left;
     margin: 2px;
     font-size: 150px;
 }
 .block:hover {
- background: white;
+ background: rgba(255, 255, 255, 0.681);
  cursor: pointer;
+}
+
+
+.instructions {
+    background: red;
+    width: 42%;
+    height: 10vh;
+    margin: auto;
+    font-size: 60px;
+
+}
+body {
+    background-image: url(./22.jpg);
+    background-size: cover;
+    
+    
 }

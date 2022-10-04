@@ -12,7 +12,7 @@
 <!-- here i'll be adding a main div and give it a class name "mainGame" -->
     <div class="mainGame">
 <!-- inside this main div i'll be adding 10 divs which will represent the upper block and 9 (3*3)small blocks where the player will use to play  -->
-        <div class="title"><span>X O</span> GAME</div>
+        <div class="title" id="item0"><span>X O</span> GAME</div>
         <div class="block" id="item1"></div>
         <div class="block" id="item2"></div>
         <div class="block" id="item3"></div>
@@ -22,10 +22,11 @@
         <div class="block" id="item7"></div>
         <div class="block" id="item8"></div>
         <div class="block" id="item9"></div>
-
+        <button type="reset" onclick="document.location.reload()">RESET</button>
     </div>
 <!-- we've to add a new div to be the buttom control, i'll add the instruction "player 1's turn" and a reset button to reset the game from the start -->
-
+<div class="instructions">   
+</div>
 
     <script src="./script.js"></script>
 </body>
