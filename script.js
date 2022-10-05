@@ -32,14 +32,16 @@ function play(event) {
         playerOneTurn = false
         deActivate(event)
         turnDisplay.innerText = "Scorpion's turn"
-        turnDisplay.style.color="rgb(255, 68, 0)" 
+        turnDisplay.style.color = "rgb(255, 68, 0)" 
+
         
     } else if (playerOneTurn === false) {
         fill.innerHTML = 'O'
+        fill.style.color = "rgb(255, 68, 0)" 
         playerOneTurn = true
         deActivate(event)
         turnDisplay.innerText = "Sub-Zero's turn"
-        turnDisplay.style.color="rgb(0, 187, 255)"
+        turnDisplay.style.color = 'rgb(0, 187, 255)'
     }
     checkWinner()
 }
@@ -181,11 +183,12 @@ function resetGame(){
     blocks.forEach(block => {
         block.innerText = ''
     })
-    turnDisplay.innerText = 'X O Game'
+    turnDisplay.innerHTML = '<span>X O</span> GAME'
     blocks.forEach(div => {
         div.addEventListener('click', play)
         fightSound.play();
         fightSound.currentTime=0;
         
     })
+    playerOneTurn = true
  }
