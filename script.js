@@ -8,7 +8,13 @@ let blocks = document.querySelectorAll('.block')
 let playerOneTurn = true
 
 let empty = ["","","","","","","","",""]
+
 let turnDisplay = document.querySelector('.title')
+
+let reset = document.getElementById('resetButton')
+
+reset.addEventListener('click', resetGame)
+
 
 blocks.forEach(div => {
     div.addEventListener('click', play)
@@ -22,14 +28,14 @@ function play(event) {
         fill.style.color = 'rgb(0, 187, 255)'
         playerOneTurn = false
         deActivate(event)
-        turnDisplay.innerText = 'Scorpions turn'
+        turnDisplay.innerText = "Scorpion's turn"
         turnDisplay.style.color="rgb(255, 68, 0)" 
         
     } else if (playerOneTurn === false) {
         fill.innerHTML = 'O'
         playerOneTurn = true
         deActivate(event)
-        turnDisplay.innerText = 'Sub-Zeros turn'
+        turnDisplay.innerText = "Sub-Zero's turn"
         turnDisplay.style.color="rgb(0, 187, 255)"
     }
     checkWinner()
@@ -38,6 +44,7 @@ function play(event) {
 function deActivate(event) {
     event.target.removeEventListener('click', play);
 }
+
 
 // Grab the class title to show who wins the Match
 function checkWinner() {
@@ -133,4 +140,17 @@ function checkWinner() {
     && item8.innerHTML !=='' && item9.innerHTML !=='') {
         result.innerText = 'Draw'
 }
+
+
 }
+function resetGame(){
+    blocks.forEach(block => {
+        block.innerText = ''
+    })
+    turnDisplay.innerText = 'X O Game'
+
+    // for(i = 0; i < 9; i++){
+    //     let itemToDelete = getElementById(`${item(i)}`)
+    //     itemToDelete.innerHTML='';
+    // }
+ }
