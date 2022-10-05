@@ -15,7 +15,9 @@ let reset = document.getElementById('resetButton')
 
 reset.addEventListener('click', resetGame)
 
-// let backgroundSound = new Audio('./scorpion-wins.mp3')
+let scorpionSound = new Audio('./scorpion-wins.mp3')
+let subzeroSound = new Audio('./Sub-Zero wins.mp3')
+let fightSound = new Audio('./Mortal Kombat.mp3')
 
 blocks.forEach(div => {
     div.addEventListener('click', play)
@@ -57,41 +59,57 @@ function checkWinner() {
         result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
        blocks.forEach((block) => block.removeEventListener('click', play));
+       subzeroSound.play();
+       fightSound.pause();
     }
     else if (item4.innerHTML === 'X' && item5.innerHTML === 'X' && item6.innerHTML === 'X'){
         result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        subzeroSound.play();
+        fightSound.pause();
     }
     else if (item7.innerHTML === 'X' && item8.innerHTML === 'X' && item9.innerHTML === 'X'){
         result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        subzeroSound.play();
+        fightSound.pause();
     }
     else if (item3.innerHTML === 'X' && item6.innerHTML === 'X' && item9.innerHTML === 'X'){
         result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        subzeroSound.play();
+        fightSound.pause();
     }
     else if (item2.innerHTML === 'X' && item5.innerHTML === 'X' && item8.innerHTML === 'X'){
         result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        subzeroSound.play();
+        fightSound.pause();
     }
     else if (item1.innerHTML === 'X' && item4.innerHTML === 'X' && item7.innerHTML === 'X'){
         result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        subzeroSound.play();
+        fightSound.pause();
     }
     else if (item3.innerHTML === 'X' && item5.innerHTML === 'X' && item7.innerHTML === 'X'){
         result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        subzeroSound.play();
+        fightSound.pause();
     }
     else if (item1.innerHTML === 'X' && item5.innerHTML === 'X' && item9.innerHTML === 'X'){
         result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        subzeroSound.play();
+        fightSound.pause();
     }
 
 // give 8 winning possibilities to O
@@ -99,41 +117,58 @@ function checkWinner() {
         result.innerText = 'Scorpion Wins' 
      document.querySelector(".title").style.color="rgb(255, 68, 0)" 
      blocks.forEach((block) => block.removeEventListener('click', play));
+     scorpionSound.play();
+     fightSound.pause();
+     
     }
     else if (item4.innerHTML === 'O' && item5.innerHTML === 'O' && item6.innerHTML === 'O'){
         result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        scorpionSound.play();
+        fightSound.pause();
     }
     else if (item7.innerHTML === 'O' && item8.innerHTML === 'O' && item9.innerHTML === 'O'){
         result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        scorpionSound.play();
+        fightSound.pause();
     }
     else if (item3.innerHTML === 'O' && item6.innerHTML === 'O' && item9.innerHTML === 'O'){
         result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        scorpionSound.play();
+        fightSound.pause();
     }
     else if (item2.innerHTML === 'O' && item5.innerHTML === 'O' && item8.innerHTML === 'O'){
         result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        scorpionSound.play();
+        fightSound.pause();
     }
     else if (item1.innerHTML === 'O' && item4.innerHTML === 'O' && item7.innerHTML === 'O'){
         result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        scorpionSound.play();
+        fightSound.pause();
     }
     else if (item3.innerHTML === 'O' && item5.innerHTML === 'O' && item7.innerHTML === 'O'){
         result.innerText = 'Scorpion Wins' 
      document.querySelector(".title").style.color="rgb(255, 68, 0)" 
      blocks.forEach((block) => block.removeEventListener('click', play));
+     scorpionSound.play();
+     fightSound.pause();
     }
     else if (item1.innerHTML === 'O' && item5.innerHTML === 'O' && item9.innerHTML === 'O'){
         result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
+        scorpionSound.play();
+        fightSound.pause();
     }
     // if all the blocks are filled without matching the above 16 possibilities, write/insert "Draw"
     else if (item1.innerHTML !=='' && item2.innerHTML !=='' && item3.innerHTML !=='' &&
@@ -149,5 +184,8 @@ function resetGame(){
     turnDisplay.innerText = 'X O Game'
     blocks.forEach(div => {
         div.addEventListener('click', play)
+        fightSound.play();
+        fightSound.currentTime=0;
+        
     })
  }
