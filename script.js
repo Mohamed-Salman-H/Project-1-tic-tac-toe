@@ -15,6 +15,7 @@ let reset = document.getElementById('resetButton')
 
 reset.addEventListener('click', resetGame)
 
+// let backgroundSound = new Audio('./scorpion-wins.mp3')
 
 blocks.forEach(div => {
     div.addEventListener('click', play)
@@ -140,17 +141,13 @@ function checkWinner() {
     && item8.innerHTML !=='' && item9.innerHTML !=='') {
         result.innerText = 'Draw'
 }
-
-
 }
 function resetGame(){
     blocks.forEach(block => {
         block.innerText = ''
     })
     turnDisplay.innerText = 'X O Game'
-
-    // for(i = 0; i < 9; i++){
-    //     let itemToDelete = getElementById(`${item(i)}`)
-    //     itemToDelete.innerHTML='';
-    // }
+    blocks.forEach(div => {
+        div.addEventListener('click', play)
+    })
  }
