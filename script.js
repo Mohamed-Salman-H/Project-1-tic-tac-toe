@@ -8,7 +8,7 @@ let blocks = document.querySelectorAll('.block')
 let playerOneTurn = true
 
 let empty = ["","","","","","","","",""]
-
+let turnDisplay = document.querySelector('.title')
 
 blocks.forEach(div => {
     div.addEventListener('click', play)
@@ -22,11 +22,15 @@ function play(event) {
         fill.style.color = 'rgb(0, 187, 255)'
         playerOneTurn = false
         deActivate(event)
+        turnDisplay.innerText = 'Scorpions turn'
+        turnDisplay.style.color="rgb(255, 68, 0)" 
         
     } else if (playerOneTurn === false) {
         fill.innerHTML = 'O'
         playerOneTurn = true
         deActivate(event)
+        turnDisplay.innerText = 'Sub-Zeros turn'
+        turnDisplay.style.color="rgb(0, 187, 255)"
     }
     checkWinner()
 }
@@ -42,84 +46,84 @@ function checkWinner() {
     
     //  give 8 winning possibilities to X 
     if (item1.innerHTML === 'X' && item2.innerHTML === 'X' && item3.innerHTML === 'X'){
-        result.innerText = 'Sub-Zero wins' 
+        result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
        blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item4.innerHTML === 'X' && item5.innerHTML === 'X' && item6.innerHTML === 'X'){
-        result.innerText = 'Sub-Zero wins' 
+        result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item7.innerHTML === 'X' && item8.innerHTML === 'X' && item9.innerHTML === 'X'){
-        result.innerText = 'Sub-Zero wins' 
+        result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item3.innerHTML === 'X' && item6.innerHTML === 'X' && item9.innerHTML === 'X'){
-        result.innerText = 'Sub-Zero wins' 
+        result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item2.innerHTML === 'X' && item5.innerHTML === 'X' && item8.innerHTML === 'X'){
-        result.innerText = 'Sub-Zero wins' 
+        result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item1.innerHTML === 'X' && item4.innerHTML === 'X' && item7.innerHTML === 'X'){
-        result.innerText = 'Sub-Zero wins' 
+        result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item3.innerHTML === 'X' && item5.innerHTML === 'X' && item7.innerHTML === 'X'){
-        result.innerText = 'Sub-Zero wins' 
+        result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item1.innerHTML === 'X' && item5.innerHTML === 'X' && item9.innerHTML === 'X'){
-        result.innerText = 'Sub-Zero wins' 
+        result.innerText = 'Sub-Zero Wins' 
         document.querySelector(".title").style.color="rgb(0, 187, 255)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
 
 // give 8 winning possibilities to O
     else if (item1.innerHTML === 'O' && item2.innerHTML === 'O' && item3.innerHTML === 'O'){
-        result.innerText = 'Scorpion wins' 
+        result.innerText = 'Scorpion Wins' 
      document.querySelector(".title").style.color="rgb(255, 68, 0)" 
      blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item4.innerHTML === 'O' && item5.innerHTML === 'O' && item6.innerHTML === 'O'){
-        result.innerText = 'Scorpion wins' 
+        result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item7.innerHTML === 'O' && item8.innerHTML === 'O' && item9.innerHTML === 'O'){
-        result.innerText = 'Scorpion wins' 
+        result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item3.innerHTML === 'O' && item6.innerHTML === 'O' && item9.innerHTML === 'O'){
-        result.innerText = 'Scorpion wins' 
+        result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item2.innerHTML === 'O' && item5.innerHTML === 'O' && item8.innerHTML === 'O'){
-        result.innerText = 'Scorpion wins' 
+        result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item1.innerHTML === 'O' && item4.innerHTML === 'O' && item7.innerHTML === 'O'){
-        result.innerText = 'Scorpion wins' 
+        result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item3.innerHTML === 'O' && item5.innerHTML === 'O' && item7.innerHTML === 'O'){
-        result.innerText = 'Scorpion wins' 
+        result.innerText = 'Scorpion Wins' 
      document.querySelector(".title").style.color="rgb(255, 68, 0)" 
      blocks.forEach((block) => block.removeEventListener('click', play));
     }
     else if (item1.innerHTML === 'O' && item5.innerHTML === 'O' && item9.innerHTML === 'O'){
-        result.innerText = 'Scorpion wins' 
+        result.innerText = 'Scorpion Wins' 
         document.querySelector(".title").style.color="rgb(255, 68, 0)" 
         blocks.forEach((block) => block.removeEventListener('click', play));
     }
