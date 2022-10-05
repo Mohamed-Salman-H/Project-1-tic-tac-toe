@@ -1,11 +1,13 @@
 // add a function and make the divs (grid) clickable, depending on the players turn
 // link the "play" function to the 9 Id's that we've created in the HTML
 
-let turn = 'Player 1';
+// let turn = 'Player 1';
 
 let blocks = document.querySelectorAll('.block')
 
 let playerOneTurn = true
+
+let empty = ["","","","","","","","",""]
 
 
 blocks.forEach(div => {
@@ -14,24 +16,29 @@ blocks.forEach(div => {
 
 function play(event) {
     let fill = document.getElementById(event.target.id);
-
-    if (playerOneTurn == true){
+    
+    if (playerOneTurn === true){
         fill.innerHTML = 'X'
         fill.style.color = 'rgb(0, 187, 255)'
         playerOneTurn = false
-
-    } else {
+        deActivate(event)
+        
+    } else if (playerOneTurn === false) {
         fill.innerHTML = 'O'
         playerOneTurn = true
+        deActivate(event)
     }
-checkWinner()
-
-    // add logic to keep track of where X and O is
-
+    checkWinner()
 }
+
+function deActivate(event) {
+    event.target.removeEventListener('click', play);
+}
+
 // Grab the class title to show who wins the Match
 function checkWinner() {
     let result = document.querySelector('.title')
+
 //  give 8 winning possibilities to X 
     if (item1.innerHTML === 'X' && item2.innerHTML === 'X' && item3.innerHTML === 'X'){
         result.innerText = 'Sub-Zero wins' 
