@@ -23,6 +23,7 @@ let subzeroSound = new Audio('./Sub-Zero wins.mp3')
 let fightSound = new Audio('./Mortal Kombat.mp3')
 
 
+
 //add an event listener with a click event to make the blocks clickable
 
 blocks.forEach(div => {
